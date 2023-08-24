@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, CSS, and JavaScript demo</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+        .blue-text {
+            color: blue;
+        }
+        #changeStyleText:hover {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML, CSS, and JavaScript Practice</h1>
+
+    <h2>HTML Basics</h2>
+    <p>This is a paragraph of text.</p>
+    <h3>This is a level 3 header.</h3>
+  
+    <h2>CSS Styling</h2>
+    <p>This text has a <span class="blue-text">blue color</span>.</p>
+    <p class="blue-text">This also blue too.</p>
+  
+    <h2>JavaScript Interaction</h2>
+    <button id="myButton">Click me</button>
+    <p id="outputText"></p>
+  
+    <p id="changeStyleText">Hover over me to change style.</p>
+
+    <script>
+        let count = 0;
+        const button = document.getElementById("myButton");
+        const output = document.getElementById("outputText");
+    
+        button.addEventListener("click", () => {
+            output.textContent = `Button clicked! ${++count}`;
+        });
+    </script>
+</body>
+</html>
