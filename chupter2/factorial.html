@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial</title>
+</head>
+<body>
+    <h1>factorial</h1>
+    <label for="num">number:</label>
+    <input type="number" id="num">
+    <br>
+    <button onclick="fact()">factorial</button>
+    <p id="result"></p>
+
+    <script>
+      function fact() {
+        let num = parseInt(document.getElementById("num").value);
+        let result = 1;
+        for (let i=2; i<=num; i++) {
+            result *= i;
+}
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+</body>
+</html>
