@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Table</title>
+</head>
+<style>
+    td {
+        /*
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        */
+        border: 1px solid black;
+        width: 40px;
+        height: 40px;
+    }
+    table{
+        border-spacing: 0;
+    }
+    </style>
+</head>
+<body>
+    <table></table>
+    <script>
+        function randomColor() {
+            const maxColor = 0xffffff;
+            let decColorWithPoint =Math.random() * (maxColor + 1);
+            let decColor = Math.floor(decColorWithPoint);
+            let hexColor = decColor.toString(16);
+            return '#'+hexColor;
+        }
+        const table = document.getElementsByTagName('table')[0];
+        let content = '';
+        for (let i = 0; i < 8; i++) {
+          content += '<tr>';
+          for (let j = 0; j < 8; j++) {
+            content += '<td style="background-color:'+randomColor()+';"></td>'
+          }
+          content += '<tr>';
+        }
+        table.innerHTML = content;
+    </script>
+</body>
+</html>
