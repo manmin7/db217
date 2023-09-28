@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Piano</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="piano">
+    <div id="logo"><img src="note.png"> Responsive Piano</div>
+    <div id="keys"></div>
+  </div>
+  <script>
+    const notes = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+    const octaves = {
+      '3':'q2w3er5t6y7u',
+      '4':'i9o0p[=]azsx',
+      '5':'cfvgbnjmk,l.'
+    };
+    let octave_keys = '';
+    for (const o in octaves) {
+     // octave_keys += '<div class="octave" data-octave="'+o+'">';
+      octave_keys += '<div class="octave" data-octave="${o}">';
+     for (let i=0; i<notes.length; i++) {
+      const note = notes[i];
+      const color = note.indexOf('#') < 0 ? 'white': 'black';
+      const keyboard = octaves[o].charAt(i);
+      octave_keys += `<div class="key ${color}"`;
+      octave_keys += ` data-keyboard="${keyboard}"`;
+      octave_keys += ` data-note="${note}">`;
+      octave_keys += '<div class="label">'
+      octave_keys += `${keyboard}<br>${note}${o}</div>`;
+      octave_keys += '</div>';
+     }
+     octave_keys += '</div>';
+    }
+    document.getElementById('keys').innerHTML = octave_keys;
+  </script>
+</body>
+</html>

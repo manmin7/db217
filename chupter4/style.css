@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  #piano {
+    background-color: red;
+    background-image: url('note_line.png');
+    width: 992px;
+    height: 290px;
+    border-radius: 10px;
+    margin: 80px auto;
+    padding: 90px 20px 0;
+    position: relative;
+  }
+
+  #logo {
+    position: absolute;
+    top: 23px;
+    color: white;
+    font-size: 1.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  #logo>img {
+    height: 30px;
+  }
+
+  #keys {
+    background-color: black;
+    width: 949px;
+    height: 180px;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .octave {
+    width: 315px;
+    display: flex;
+  }
+
+  .white {
+    background-color: #fff;
+    width: 41px;
+    height: 175px;
+    margin: 2px;
+    border-radius: 0 0 3px 3px;
+  }
+
+  .black {
+    position: relative;
+  }
+
+  .black>.label {
+    position: absolute;
+    color: white;
+    width: 32px;
+    left: -16px;
+    top: 50px;
+  }
+
+  .black::after {
+    content: "";
+    background-color: #1d1e22;
+    width: 32px;
+    height: 100px;
+    position: absolute;
+    left: -16px;
+    border-radius: 0 0 3px 3px;
+  }
+
+
