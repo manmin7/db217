@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Piano</title>
   <link rel="stylesheet" href="style.css">
+  <script src="audiosynth.js"></script>
 </head>
 <body>
   <div id="piano">
@@ -22,7 +23,7 @@
     let octave_keys = '';
     for (const o in octaves) {
      // octave_keys += '<div class="octave" data-octave="'+o+'">';
-      octave_keys += '<div class="octave" data-octave="${o}">';
+      octave_keys += `<div class="octave" data-octave="${o}">`;
      for (let i=0; i<notes.length; i++) {
       const note = notes[i];
       const color = note.indexOf('#') < 0 ? 'white': 'black';
@@ -37,6 +38,37 @@
      octave_keys += '</div>';
     }
     document.getElementById('keys').innerHTML = octave_keys;
+
+    Synth.setVolume(0.5);
+    function playNote(key) {
+      const note = key.dataset.note;
+      const octave = key.parentElement.dataset.octave;
+
+      Synth.play(0, note, octave, 4);
+  }
+  const keys = document.querySelectorAll('.key');
+  for (let key of keys) {
+    key.addEventListener('mousedown', function () {
+      playNote(key);
+    });
+  }
+  window.addEventListener('keydown', function (event) {
+    const keyboard = event.key;
+    const key = document.querySelector(`.key[data-keyboard="${keyboard}"]`);
+      if (key) {
+      if (!key.classList.contains('pressed')) {
+        key.classList.add('pressed');
+        playNote(key);
+      }
+    }
+  });
+  window.addEventListener('keyup', function (event) {
+    const keyboard = event.key;
+    const key = document.querySelector(`.key[data-keyboard="${keyboard}"]`);
+      if (key) {
+      key.classList.remove('pressed');
+    }
+  });
   </script>
 </body>
 </html>
