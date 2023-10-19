@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text&family=Unlock&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #24272e;
+    color: white;
+    text-align: center;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #24272e  ;
+    font-family: 'Big Shoulders Stencil Text', sans-serif;
+}
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    width: 200px;
+    font-family: 'Unlock', serif;
+    font-size: 46px;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.badge {
+    background-color: #e25840;
+    font-size: 14px;
+    font-family: Calibri, sans-serif;
+    padding: 2px 10px;
+}
+
+#user-label {
+ position: absolute;
+ top: 30px;
+ left: -25px;
+}
+
+#comp-label {
+    position: absolute;
+    top: 30px;
+    right: -30px;
+}
+
+#result {
+    font-family: Calibri, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#stage {
+    margin: 50px 0;
+}
+#stage > img {
+    height: 250px;
+    margin: 0 50px;
+}
+
+#comp-choice {
+    transform: rotate(180deg) !important;
+}
+
+#choices {
+    margin-top: 50px;
+}
+
+.choice{
+    width: 130px;
+    height: 130px;
+    border: 4px solid white;
+    border-radius: 50%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    transition: all 0.3s ease;
+}
+
+.choice > img {
+    width: 96px;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background-color: darkcyan;
+}
+
+#message {
+    font-family: Calibri, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@keyframes ready {
+    0%, 100% {
+      top: 0;
+    }
+    25% {
+      top: -10px;
+    }
+    75% {
+      top: 10px;
+    }
+  }
+
+  .ready {
+    position: relative;
+    animation: ready 0.5s infinite;
+  }
+
+  @keyframes winner {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+  }
+  
+  .winner {
+    animation: winner 0.5s ease infinite;
+  }
