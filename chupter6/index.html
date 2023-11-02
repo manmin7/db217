@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Demographics (Statistics)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="filter">
+    <p>
+      <label for="year">ปี</label>
+      <select id="year" onchange="resetMonth()"></select>
+    </p>
+    <p>
+    <label for="month">เดือน</label>
+    <select id="month" onchange="resetDname()"></select>
+    </p>
+    <p>
+      <label for="dname">เขต</label>
+      <select id="dname" onchange="showChart()"></select>
+    </p>
+  </div>
+  <div id="report">
+    <div id="chart">
+      <canvas></canvas>
+    </div>
+    <div id="stat">
+      <table>
+        <tr>
+          <th>Mean: </th>
+          <td id="mean"></td>
+        </tr>
+        <tr>
+          <th>Median:</th>
+          <td id="median"></td>
+        </tr>
+        <tr>
+          <th>Mode:</th>
+          <td id="mode"></td>
+        </tr>
+        <tr>
+          <th>Variance:</th>
+          <td id="var"></td>
+        </tr>
+        <tr>
+          <th>Standard Diviation:</th>
+          <td id="sd"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="load_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

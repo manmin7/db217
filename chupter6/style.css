@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 50px;
+}
+
+select {
+  padding: 5px;
+  margin: 5px;
+}
+
+#report {
+  display: flex;
+  flex-grow: 1;
+}
+
+#chart {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+#chart>canvas {
+  width: 100% !important;
+}
+
+#stat {
+  min-width: 230px;
+  text-align: left;
+  padding: 10px;
+}
+
+#stat tr {
+  line-height: 2em;
+}
+
+#stat td {
+  text-align: right;
+}
