@@ -1,0 +1,72 @@
+/* This class is used to style a deck card. */
+.deck-card {
+  /* The background image of the card is set to 'deck.png'. */
+background-image: url('../image/deck.png');
+  /* The width and height of the card are set to 79px and 123px respectively. */
+width: 79px;
+height: 123px;
+  /* The card is displayed as an inline-block element. */
+display: inline-block;
+  /* The margin around the card is set to 5px. */
+margin: 5px;
+}
+
+/* These classes are used to set the vertical position of the background image for each suit. */
+.club {
+  background-position-y: 0;
+}
+.diamond {
+  background-position-y: -123px;
+}
+.heart {
+  background-position-y: -246px;
+}
+.spade {
+  background-position-y: -369px;
+}
+
+/* These classes are used to set the horizontal position of the background image for each card rank. */
+.mA {
+  background-position-x: 0;
+}
+.m2 {
+  background-position-x: -79px;
+}
+.m3 {
+  background-position-x: -158px;
+}
+.m4 {
+  background-position-x: -237px;
+}
+.m5 {
+  background-position-x: -316px;
+}
+.m6 {
+  background-position-x: -396px;
+}
+.m7 {
+  background-position-x: -474px;
+}
+.m8 {
+  background-position-x: -553px;
+}
+.m9 {
+  background-position-x: -632px;
+}
+.m10 {
+  background-position-x: -711px;
+}
+.mJ {
+  background-position-x: -790px;
+}
+.mQ {
+  background-position-x: -869px;
+}
+.mK {
+  background-position-x: -948px;
+}
+
+body {
+  padding: 10px 0;
+  background-color: darkgreen;
+}

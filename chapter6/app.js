@@ -114,13 +114,55 @@ function showChart() {
    }
  });
   // Calculate the mean age
+let sumAge = 0;
+let population = 0;
+for(let i = 0; i < chart_data.length; i++) {
+  sumAge += (x_ticks[i] * chart_data[i]);
+  population += chart_data[i];
+}
+const mean = sumAge / population;
+document.querySelector('#mean').innerHTML = mean.toFixed(4);
 
   // Calculate the median age
+const mid = Math.ceil(population / 2);
+const sorted = [];
+let i = 0;
+while(sorted.length < mid) {
+  for(let j = 0; j < chart_data[i]; j++) {
+    sorted.push(x_ticks[i]);
+  }
+  i++;
+}
+let median;
+if(population % 2 == 0) {
+  median = (sorted[mid-1] + sorted[mid]) / 2;
+}
+else {
+  median = sorted[mid-1];
+}
+document.querySelector('#median').innerHTML = median.toFixed(4);
 
   // Calculate the mode age
+let mode = 1;
+let max = chart_data[0];
+for(let i = 1; i < chart_data.length; i++) {
+  if(chart_data[i] > max) {
+    max = chart_data[i];
+    mode = x_ticks[i];
+  }
+}
+document.querySelector('#mode').innerHTML = mode.toFixed(4);
 
   // Calculate the variance
+let sumSquare = 0;
+for(let i = 0; i < chart_data.length; i++) {
+  sumSquare +=
+  ((x_ticks[i] - mean) ** 2) * chart_data[i];
+}
+const variance = sumSquare / population;
+document.querySelector('#var').innerHTML = variance.toFixed(4);
 
   // Calculate the standard deviation
-
+  const sd = variance ** 0.5;
+  document.querySelector('#sd').innerHTML = sd.toFixed(4);
 }
