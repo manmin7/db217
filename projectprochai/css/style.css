@@ -1,0 +1,37 @@
+.box{
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.itme{
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+h1{
+    background-color: rebeccapurple;
+    padding: 20px;
+    color: greenyellow;
+}
+
+.content {
+    background-color: rebeccapurple;
+    border: 2px solid black;
+    height: 100%;
+    padding: 7px;
+}
+
+h2{
+    color: greenyellow;
+}
+
+h3{
+    color: greenyellow;
+}
+
+h4{
+    color: red
+}
